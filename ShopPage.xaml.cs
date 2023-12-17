@@ -43,4 +43,11 @@ public partial class ShopPage : ContentPage
         }
         await Map.OpenAsync(location, options);
     }
+    async void OnDeleteMapButtonClicked(object sender, EventArgs e)
+    {
+        var shop = (Shop)BindingContext;
+        await App.Database.DeleteShopAsync(shop);
+        //listView.ItemsSource = await App.Database.GetProductsAsync();
+        await Navigation.PopAsync();
+    }
 }
