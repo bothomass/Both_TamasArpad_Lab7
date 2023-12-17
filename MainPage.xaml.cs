@@ -1,4 +1,6 @@
-﻿namespace Both_TamasArpad_Lab7;
+﻿using Both_TamasArpad_Lab7.Models;
+
+namespace Both_TamasArpad_Lab7;
 
 public partial class MainPage : ContentPage
 {

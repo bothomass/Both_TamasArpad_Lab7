@@ -16,5 +16,6 @@ namespace Both_TamasArpad_Lab7.Models
         [ForeignKey(typeof(ShopList))] 
         public int ShopListID { get; set; } 
         
-        public int ProductID { get; set; } }
+        public int ProductID { get; set; } 
+    }
 }

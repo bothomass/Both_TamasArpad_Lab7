@@ -37,4 +37,15 @@ public partial class ListPage : ContentPage
         var shopl = (ShopList)BindingContext; 
         listView.ItemsSource = await App.Database.GetListProductsAsync(shopl.ID); 
     }
+
+    async void OnDeleteItemClicked(object sender, EventArgs e)
+    {
+        var selectListProduct = listView.SelectedItem as ListProduct;
+
+        if (selectListProduct != null)
+        {
+            await App.Database.DeleteListProductAsync(selectListProduct);
+            listView.ItemsSource = await App.Database.GetListProductsAsync(selectListProduct.ShopListID);
+        }
+    }
 }
